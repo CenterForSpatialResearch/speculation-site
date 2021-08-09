@@ -2,7 +2,14 @@
 
 1. Set up gatsby development environment (follow [these instructions](https://www.gatsbyjs.com/docs/tutorial/part-0/)no need to set up gatsby cloud account)
 2. clone this repository
-3. navigate to cloned repository in Terminal and run 
+3. navigate to cloned repository in Terminal (`cd speculation-site`) 
+4. run `git checkout master` (creates a local tracking branch of the master branch) run `git branch -a` if you want to see all branches listed
+4. run `npm install gh-pages` (this is the plug in that supports deploying gatsby sites to github pages easily)
+5. start developing! all changes are made in the `master` branch. 
+6. run `gatsby develop` to see the site running locally while you develop
+7. once you are ready to deploy your changes to the github pages hosted site, run `npm run deploy` in terminal. this automatically builds the site and the pushes all changes in the public folder to the gh-pages branch
+8. commit your changes to the master branch and push these changes to the remote
+
 
 ---
 
