@@ -1,6 +1,7 @@
 module.exports = {
+  pathPrefix: "/speculation-site",
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://darebrawley.github.io",
     title: "speculation-site",
   },
   plugins: [
