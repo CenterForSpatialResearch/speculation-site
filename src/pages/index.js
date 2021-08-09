@@ -81,6 +81,13 @@ const badgeStyle = {
 // data
 const links = [
   {
+    text: "How to Guides",
+    url: "https://www.gatsbyjs.com/docs/how-to/",
+    description:
+      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done. test",
+    color: "#1099A8",
+  },
+  {
     text: "Tutorial",
     url: "https://www.gatsbyjs.com/docs/tutorial/",
     description:
@@ -91,7 +98,7 @@ const links = [
     text: "How to Guides",
     url: "https://www.gatsbyjs.com/docs/how-to/",
     description:
-      "test cloned repo Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
+      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
     color: "#1099A8",
   },
   {
