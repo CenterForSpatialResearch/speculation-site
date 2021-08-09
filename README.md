@@ -10,6 +10,8 @@
 7. once you are ready to deploy your changes to the github pages hosted site, run `npm run deploy` in terminal. this automatically builds the site and the pushes all changes in the public folder to the gh-pages branch
 8. commit your changes to the master branch and push these changes to the remote
 
+9. before starting any work use `git fetch` and `git pull` to make sure you have latest changes
+
 
 ---
 
