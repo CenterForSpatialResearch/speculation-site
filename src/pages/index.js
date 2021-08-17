@@ -1,177 +1,81 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql, Link } from "gatsby";
+import Layout from "../components/layout";
+import Img from "gatsby-image";
+import { SinglePost, PostInfo, PreTitle, Title, Subtitle, Update, Freshnew, Excrept, Card, CardColumns }  from "../components/style/emo-home-posts";
 
-import GlobalStateProvider from "../context/provider"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Hero from "../components/sections/hero"
-import Articles from "../components/sections/articles"
-import About from "../components/sections/about"
-import Interests from "../components/sections/interests"
-import Projects from "../components/sections/projects"
-import Contact from "../components/sections/contact"
-import { seoTitleSuffix } from "../../config"
+let minutes = 1000 * 60;
+let hours = minutes * 60;
+let days = hours * 24;
+let months = days * 30;
 
-const IndexPage = ({ data }) => {
-  const { frontmatter } = data.index.edges[0].node
-  const { seoTitle, useSeoTitleSuffix, useSplashScreen } = frontmatter
-
-  const globalState = {
-    // if useSplashScreen=false, we skip the intro by setting isIntroDone=true
-    isIntroDone: useSplashScreen ? false : true,
-    // darkMode is initially disabled, a hook inside the Layout component
-    // will check the user's preferences and switch to dark mode if needed
-    darkMode: false,
-  }
-
+export default ({ data }) => {
   return (
-    <GlobalStateProvider initialState={globalState}>
-      <Layout>
-        <SEO
-          title={
-            useSeoTitleSuffix
-              ? `${seoTitle} - ${seoTitleSuffix}`
-              : `${seoTitle}`
-          }
-        />
-        {/* Articles is populated via Medium RSS Feed fetch */}
-        <Articles />
-        <About content={data.about.edges} />
-        <Interests content={data.interests.edges} />
-        <Projects content={data.projects.edges} />
-        <Contact content={data.contact.edges} />
-      </Layout>
-    </GlobalStateProvider>
-  )
-}
+    <Layout>
+      <CardColumns>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Card key={node.id}>
+            <Link to={node.fields.slug}>
+              <SinglePost>
+	              {Math.abs(Math.round((new Date(node.frontmatter.update).getTime() - new Date().getTime()) / months)) <= 1 &&
+	               node.frontmatter.update !== node.frontmatter.date &&(
+                  <Update>Update</Update>
+                )}
+	              {Math.abs(Math.round((new Date(node.frontmatter.update).getTime() - new Date().getTime()) / months)) <= 1 &&
+	              node.frontmatter.update === node.frontmatter.date &&(
+		              <Freshnew>Fresh New</Freshnew>
+	              )}
+                <Img
+                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                />
+                <PostInfo>
+                  <PreTitle>{node.frontmatter.category}</PreTitle>
+                  <Title>{node.frontmatter.title}</Title>
+	                <Subtitle>{node.frontmatter.subtitle}</Subtitle>
+                  <Excrept>{node.excerpt}</Excrept>
+                </PostInfo>
+              </SinglePost>
+            </Link>
+          </Card>
+        ))}
+      </CardColumns>
+    </Layout>
+  );
+};
 
-IndexPage.propTypes = {
-  data: PropTypes.object.isRequired,
-}
-
-export default IndexPage
-
-export const pageQuery = graphql`
-  {
-    index: allMdx(filter: { fileAbsolutePath: { regex: "/index/index/" } }) {
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___update], order: DESC }
+      filter: { frontmatter: { category: { ne: "2ndcat" } } }
+    ) {
       edges {
         node {
-          frontmatter {
-            seoTitle
-            useSeoTitleSuffix
-            useSplashScreen
+          id
+          excerpt
+          fields {
+            slug
           }
-        }
-      }
-    }
-    hero: allMdx(filter: { fileAbsolutePath: { regex: "/index/hero/" } }) {
-      edges {
-        node {
-          body
           frontmatter {
-            greetings
+            date(formatString: "DD MMMM, YYYY")
+            update(formatString: "DD MMMM, YYYY")
             title
-            subtitlePrefix
             subtitle
-            icon {
+            featuredImage {
               childImageSharp {
-                fluid(maxWidth: 60, quality: 90) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    about: allMdx(filter: { fileAbsolutePath: { regex: "/index/about/" } }) {
-      edges {
-        node {
-          body
-          frontmatter {
-            title
-            image {
-              childImageSharp {
-                fluid(maxWidth: 400, quality: 90) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    interests: allMdx(
-      filter: { fileAbsolutePath: { regex: "/index/interests/" } }
-    ) {
-      edges {
-        node {
-          exports {
-            shownItems
-            interests {
-              name
-              icon {
-                childImageSharp {
-                  fixed(width: 20, height: 20, quality: 90) {
-                    ...GatsbyImageSharpFixed
-                  }
-                }
-              }
-            }
-          }
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-    projects: allMdx(
-      filter: {
-        fileAbsolutePath: { regex: "/index/projects/" }
-        frontmatter: { visible: { eq: true } }
-      }
-      sort: { fields: [frontmatter___position], order: ASC }
-    ) {
-      edges {
-        node {
-          body
-          frontmatter {
-            title
-            category
-            emoji
-            external
-            github
-            screenshot {
-              childImageSharp {
-                fluid(maxWidth: 400, quality: 90) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            tags
-            position
-            buttonVisible
-            buttonUrl
-            buttonText
-          }
-        }
-      }
-    }
-    contact: allMdx(
-      filter: { fileAbsolutePath: { regex: "/index/contact/" } }
-    ) {
-      edges {
-        node {
-          body
-          frontmatter {
-            title
-            name
-            email
-            profileImage {
-              childImageSharp {
-                fluid(maxWidth: 400, quality: 90) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 500, maxHeight: 500) {
+                  base64
+                  tracedSVG
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                  originalImg
+                  originalName
+                  presentationWidth
+                  presentationHeight
                 }
               }
             }
@@ -180,4 +84,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
