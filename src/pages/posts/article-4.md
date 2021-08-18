@@ -7,10 +7,8 @@ tags: ["book", "singer", "lorem"]
 category: "Narrative"
 project: "https://google.com"
 demo: "https://google.com"
-featuredImage: "../../img/post/cody-davis-rose.jpg"
+featuredImage: "../../img/post/FrequentFlips.png"
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis leo ut tellus eleifend elementum. Nulla justo lectus, convallis hendrerit luctus non, condimentum non mi. Nam varius nulla vel imperdiet semper. Donec in sollicitudin nulla. Pellentesque et tortor facilisis, volutpat ex vitae, bibendum diam. Donec metus arcu, pretium eget congue id, tempor id ipsum. Duis nibh quam, suscipit vel justo non, commodo ornare tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec massa ante, tempor eget pharetra vehicula, pellentesque non ante.
+Some houses flip quite frequently. Among tax deeds that show thousands of house flips over the past 20 years in Philadelphia, there are certain addresses which appear to have been flipped many times.
+12 Hamilton Circle has been flipped twelve times, so frequently that it is doubtful that any serious renovation is taking place in between flips. In these situations, usually driven by investors, the flips look more like high-speed asset trading than unlocking unrealized value in an old house.
 
-Suspendisse facilisis id est id porttitor. Morbi at tincidunt velit, eu dignissim risus. Vivamus non bibendum ligula. Aliquam ac metus bibendum, rutrum nulla ac, pharetra turpis. Cras ut vestibulum leo. Quisque ex leo, placerat sit amet pellentesque pulvinar, pretium sed leo. Donec sed lectus elementum, faucibus ex viverra, lobortis orci. Praesent volutpat justo non mollis suscipit. Morbi volutpat molestie elit vitae condimentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent quis tortor ante. Mauris lobortis semper nunc sed ullamcorper.
-
-Etiam vel diam congue, scelerisque metus sit amet, tincidunt tellus. Vivamus viverra tincidunt lorem nec ultricies. Sed at velit tellus. Nullam et vehicula lectus. Nullam viverra sollicitudin nunc vitae tincidunt. Suspendisse eu erat dignissim nisl efficitur commodo ut eu nisi. Sed pulvinar dolor sit amet orci varius, quis malesuada justo mollis. Nam elementum erat at interdum porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus dapibus ultrices nibh, sed bibendum magna semper ut. Aliquam sed purus iaculis, dapibus ligula sit amet, congue magna.

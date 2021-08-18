@@ -60,9 +60,11 @@ const Layout = ({ children }) => (
 							</Logo>
 							<nav>
 								<LinksList>
-									<li><Link to={`/single-page/`} activeClassName="active">Single Page</Link></li>
-									<li><Link to={`/`} activeClassName="active">Main Category</Link></li>
+									<li><Link to={`/`} activeClassName="active">Overview</Link></li>
 									<li><Link to={`/cat2/`} activeClassName="active">2nd Category</Link></li>
+									<li><Link to={`/cat3/`} activeClassName="active">3rd Category</Link></li>
+				
+									
 								</LinksList>
 							</nav>
 						</Navigator>

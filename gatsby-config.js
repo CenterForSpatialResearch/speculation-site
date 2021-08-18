@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Fine`,
-    subtitle: `Gatsby`,
-    description: `Discover the new Gatsby Fine starter library `,
+    title: `Geographies of Real Estate Speculation`,
+    subtitle: `Center for Spatial Research`,
+    description: ``,
     keywords: `code, programming, gatsby, tutorial, starter, library`,
     siteUrl: `https://gatsby-starter-fine.netlify.com`
   },
