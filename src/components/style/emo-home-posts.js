@@ -15,8 +15,8 @@ export const Card = styled.div`
 `;
 
 export const CardColumns = styled.div`
-  -moz-column-gap: 1.25rem;
-  column-gap: 1.25rem;
+  -moz-column-gap: 3rem;
+  column-gap: 3rem;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   

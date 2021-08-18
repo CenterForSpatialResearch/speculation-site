@@ -3,19 +3,18 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 const _ = require("lodash")
 
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-// Change the node internal type from 'allMarkdownRemark' to 'MarkdownRemark'
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const slug = createFilePath({ node, getNode, basePath: `pages/posts` });
     createNodeField({
-      name: `slug`,
       node,
-      value,
-    })
+      name: `slug`,
+      value: slug
+    });
   }
-}
+};
+
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions

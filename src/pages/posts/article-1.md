@@ -1,16 +1,16 @@
 ---
-title: "Lorem Ipsum Dolor"
-subtitle: "sit amet consectetur"
+title: "Background"
+subtitle: "Institutional Investing across geographies"
 date: "2018-11-27"
 update: "2018-11-27"
-tags: ["book", "singer", "lorem"]
+tags: ["background"]
 category: "Narrative"
 project: "https://google.com"
 demo: "https://google.com"
-featuredImage: "../../img/post/brandi-redd.jpg"
+featuredImage: "../../img/post/inv2018.png"
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis leo ut tellus eleifend elementum. Nulla justo lectus, convallis hendrerit luctus non, condimentum non mi. Nam varius nulla vel imperdiet semper. Donec in sollicitudin nulla. Pellentesque et tortor facilisis, volutpat ex vitae, bibendum diam. Donec metus arcu, pretium eget congue id, tempor id ipsum. Duis nibh quam, suscipit vel justo non, commodo ornare tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec massa ante, tempor eget pharetra vehicula, pellentesque non ante.
+Since 2000, the share of residential properties in the U.S. being purchased as investment vehicles is continuing to grow and take on new forms. New investment practices have figured variously in the housing bubble, subprime mortgage crash, subsequent real estate owned property markets, and more recent forms of speculation in single-family rental (SFR) properties. The scale and scope of these purchases are fundamentally reshaping access to housing in the U.S. However very little is known about the spatial dynamics of this transformation at the urban scale.
 
-Suspendisse facilisis id est id porttitor. Morbi at tincidunt velit, eu dignissim risus. Vivamus non bibendum ligula. Aliquam ac metus bibendum, rutrum nulla ac, pharetra turpis. Cras ut vestibulum leo. Quisque ex leo, placerat sit amet pellentesque pulvinar, pretium sed leo. Donec sed lectus elementum, faucibus ex viverra, lobortis orci. Praesent volutpat justo non mollis suscipit. Morbi volutpat molestie elit vitae condimentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent quis tortor ante. Mauris lobortis semper nunc sed ullamcorper.
+The acquisition of distressed and real estate owned properties since 2008 by LLCs was explicitly supported by the Federal Housing Finance Agency and was assumed to be a stabilizing force (Fields 2018). However in the years since, research has uncovered many ways in which investor-ownership has been destabilizing for housing markets, served to transfer wealth out of communities of color, and has contributed to increasing rates of eviction (Gilderbloom et al. 2012; Raymond et al. 2018; Molina 2016). Invitation Homes is the singular illustration of the expansion of SFR holdings. Since the great recession it has become the nation’s largest landlord of single-family houses owning over 80,000 homes nationwide – and it is a bellwether for the industry more broadly. During the summer of 2020, Invitation Homes raised nearly $450 million with plans to potentially double the number of houses they control, in anticipation of large numbers of distressed properties as a result of COVID-19(“Invitation Homes May Double Single-Family Portfolio” 2020). Other Real Estate Investment Trusts and LLC managers are reportedly doing the same (Gose 2020).
 
-Etiam vel diam congue, scelerisque metus sit amet, tincidunt tellus. Vivamus viverra tincidunt lorem nec ultricies. Sed at velit tellus. Nullam et vehicula lectus. Nullam viverra sollicitudin nunc vitae tincidunt. Suspendisse eu erat dignissim nisl efficitur commodo ut eu nisi. Sed pulvinar dolor sit amet orci varius, quis malesuada justo mollis. Nam elementum erat at interdum porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus dapibus ultrices nibh, sed bibendum magna semper ut. Aliquam sed purus iaculis, dapibus ligula sit amet, congue magna.
+In this context, and aiming to contribute to the growing body of research on the actions and impacts of investors in housing, this project investigates the spatial dynamics of investor ownership of residential properties in small-mid sized cities in the Northeast U.S., including Philadelphia, Buffalo, and Newark to start. Understanding the present extents, and spatial patterns of investor activity is necessary as a way to uncover the newest forms of overlap between profit-making and housing. Revealing these geographies and activities is a necessary first step in fighting for housing policies that are indeed for housing, rather than drivers of further speculation.

@@ -39,7 +39,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: "sfr" } } }
+      filter: { frontmatter: { tags: { in: "flip" } } }
     ) {
       totalCount
       edges {

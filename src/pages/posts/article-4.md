@@ -1,9 +1,9 @@
 ---
-title: "Lorem Ipsum Dolor"
-subtitle: "sit amet consectetur"
+title: "Frequently Flipped Properties"
+subtitle: "Visualization"
 date: "2018-11-27"
 update: "2018-11-27"
-tags: ["book", "singer", "lorem"]
+tags: ["flip"]
 category: "Narrative"
 project: "https://google.com"
 demo: "https://google.com"
