@@ -4,7 +4,8 @@ module.exports = {
     subtitle: `Center for Spatial Research`,
     description: ``,
     keywords: `code, programming, gatsby, tutorial, starter, library`,
-    siteUrl: `https://gatsby-starter-fine.netlify.com`
+    siteUrl: ``,
+    pathPrefix: '/speculation-site'
   },
   plugins: [
     `gatsby-plugin-jss`,
