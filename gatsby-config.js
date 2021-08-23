@@ -4,7 +4,7 @@ module.exports = {
     subtitle: `Center for Spatial Research`,
     description: ``,
     keywords: `code, programming, gatsby, tutorial, starter, library`,
-    siteUrl: ``,
+    siteUrl: `https://darebrawley.github.io/speculation-site/`,
     pathPrefix: '/speculation-site'
   },
   plugins: [
