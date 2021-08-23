@@ -19,7 +19,7 @@ export const Card = styled.div`
 export const CardColumns = styled.div`
   -moz-column-gap: 3rem;
   column-gap: 3rem;
-  display: grid;
+  display: list;
   grid-template-columns: repeat(1, 1fr);
   
   ${mwS.small(css`

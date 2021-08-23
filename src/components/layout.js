@@ -70,7 +70,9 @@ const Layout = ({ children }) => (
 							</nav>
 						</Navigator>
 					</Aside>
-					<Main>{children}</Main>
+					<Main>
+						<div class = "overarching-grid">{children}</div>
+						</Main>
 					</React.Fragment>
 					)}
 		/>
