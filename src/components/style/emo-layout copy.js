@@ -5,31 +5,10 @@ export const Main = styled.main`
   max-width: 1150px;
   width: 100%;
   float: left;
-  padding: 30px;
-  margin-top: 130px;
-  position: relative;
   display: block;
-  top: 0;
-
-  
-  ${mwS.medium(css`
-    margin-top: 0;
-    width: auto;
-    margin-left: 235px;
-    max-width: 75%;
-  `)};
-`;
-
-export const Main2 = styled.main2`
-  max-width: 1150px;
-  width: 100%;
-  float: left;
   padding: 30px;
-  margin-top: 130px;
   position: relative;
-  display: block;
-  top: 0;
-
+  margin-top: 130px;
   
   ${mwS.medium(css`
     margin-top: 0;

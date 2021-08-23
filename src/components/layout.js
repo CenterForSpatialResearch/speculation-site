@@ -8,7 +8,7 @@ import favicon48 from "../img/favicon/favicon48.png"
 
 import React from "react";
 import { StaticQuery, Link, graphql } from "gatsby";
-import { Main, Aside, Logo, Navigator, LinksList, SocialList } from "./style/emo-layout.js";
+import { Main, Main2, Aside, Logo, Navigator, LinksList, SocialList } from "./style/emo-layout.js";
 import { Helmet } from "react-helmet"
 
 
