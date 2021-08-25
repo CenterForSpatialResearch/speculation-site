@@ -30,8 +30,10 @@ const Layout = ({ children }) => (
 		`}
 		render = { data => (
 			<React.Fragment>
+			<div class = "banner"> <h3>{data.site.siteMetadata.title}</h3> </div>
+			<div class = "marquis"></div>
 			<Helmet
-			title = {data.site.siteMetadata.title}
+			
 			meta = {[
 				{
 					name: "description",
@@ -50,14 +52,7 @@ const Layout = ({ children }) => (
 					/>
 					<Aside>
 						<Navigator>
-							<Logo>
-								<h5>{data.site.siteMetadata.title} <SocialList><span>
-								<a target="_blank" href="#"><span className="fab fa-twitter"></span></a></span> <span>
-								<a target="_blank" href="#"><span className="fab fa-instagram"></span></a></span> <span>
-								<a target="_blank" href="#"><span className="fab fa-github"></span></a></span>
-								</SocialList></h5>
-								<p>{data.site.siteMetadata.description}</p>
-							</Logo>
+							
 							<nav>
 								<LinksList>
 									<li><Link to={`/`} activeClassName="active">All</Link></li>

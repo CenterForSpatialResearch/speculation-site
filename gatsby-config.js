@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Geographies of Real Estate Speculation`,
+    title: `GEOGRAPHIES OF REAL ESTATE SPECULATION`,
     subtitle: `Center for Spatial Research`,
     description: ``,
-    keywords: `code, programming, gatsby, tutorial, starter, library`,
+    keywords: `mapping, CSR, Columbia, GSAPP, research`,
     siteUrl: `https://darebrawley.github.io/speculation-site/`,
     pathPrefix: '/speculation-site'
   },

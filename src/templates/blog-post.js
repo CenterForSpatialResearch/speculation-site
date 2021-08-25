@@ -1,64 +1,107 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
-import { Header, MainPost, PreTitle, Title,Subtitle, Tags, Date, Stats, SocialShare } from "../components/style/emo-post";
+import Img from "gatsby-image";
+import { SinglePost, Update, Freshnew, Card, CardColumns } from "../components/style/emo-post";
+import { SinglePost2, PostInfo2, PreTitle2, Subtitle2, Update2, Freshnew2, Excrept2, Card2, CardColumns2 }  from "../components/style/emo-home-posts-2";
+
+
+let minutes = 1000 * 60;
+let hours = minutes * 60;
+let days = hours * 24;
+let months = days * 30;
 
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
-      <MainPost>
-        <Header>
-          <PreTitle>{post.frontmatter.category}</PreTitle>
-          <Title>{post.frontmatter.title}</Title>
-	        <Subtitle>{post.frontmatter.subtitle}</Subtitle>
-          <p><strong>Project</strong> <a href={post.frontmatter.project} target={"_blank"}>{post.frontmatter.project}</a></p>
-          <p><strong>Demo</strong> <a href={post.frontmatter.demo} target={"_blank"}>{post.frontmatter.demo}</a></p>
-        </Header>
-        <div
-          className={"content"}
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-        <footer>
-          <Date>{post.frontmatter.date}</Date>
-	        <Tags>
-		        {post.frontmatter.tags.map((tag, index) => (
-			        <li key={index}>{tag}</li>
-		        ))}
-	        </Tags>
-          <Stats>
-            <SocialShare>
-              <li className={"social-icon"}>
-                <Link to="#">
-                  <span className={"fab fa-twitter"}> </span>
-                </Link>
-              </li>
-              <li className={"social-icon"}>
-                <Link to="#">
-                  <span className={"fab fa-facebook"}> </span>
-                </Link>
-              </li>
-            </SocialShare>
-          </Stats>
-        </footer>
-      </MainPost>
+      <CardColumns2>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Card2 key={node.id}>
+            <Link to={node.fields.slug}>
+              <SinglePost2>
+	              {Math.abs(Math.round((new Date(node.frontmatter.update).getTime() - new Date().getTime()) / months)) <= 1 &&
+	               node.frontmatter.update !== node.frontmatter.date &&(
+                  <Update2>Update</Update2>
+                )}
+	              {Math.abs(Math.round((new Date(node.frontmatter.update).getTime() - new Date().getTime()) / months)) <= 1 &&
+	              node.frontmatter.update === node.frontmatter.date &&(
+		              <Freshnew2>Fresh New</Freshnew2>
+	              )}
+                <PostInfo2>
+                  <PreTitle2>{node.frontmatter.category}</PreTitle2>
+	                <Subtitle2>{node.frontmatter.subtitle}</Subtitle2>
+                  <Excrept2>{node.excerpt}</Excrept2>
+                </PostInfo2>
+              </SinglePost2>
+            </Link>
+          </Card2>
+        ))}
+      </CardColumns2>
+      <CardColumns>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Card key={node.id}>
+            <Link to={node.fields.slug}>
+              <SinglePost>
+	              {Math.abs(Math.round((new Date(node.frontmatter.update).getTime() - new Date().getTime()) / months)) <= 1 &&
+	               node.frontmatter.update !== node.frontmatter.date &&(
+                  <Update>Update</Update>
+                )}
+	              {Math.abs(Math.round((new Date(node.frontmatter.update).getTime() - new Date().getTime()) / months)) <= 1 &&
+	              node.frontmatter.update === node.frontmatter.date &&(
+		              <Freshnew>Fresh New</Freshnew>
+	              )}
+                <Img
+                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                />
+                
+              </SinglePost>
+            </Link>
+          </Card>
+        ))}
+      </CardColumns>
     </Layout>
   );
 };
 
 export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        subtitle
-        tags
-        category
-        project
-        demo
-        date(formatString: "DD MMMM, YYYY")
+query {
+  allMarkdownRemark(
+    sort: { fields: [frontmatter___update], order: DESC }
+  ) {
+    edges {
+      node {
+        id
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "DD MMMM, YYYY")
+          update(formatString: "DD MMMM, YYYY")
+          title
+          subtitle
+          featuredImage {
+            childImageSharp {
+              fluid(maxWidth: 500, maxHeight: 500) {
+                base64
+                tracedSVG
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+                originalImg
+                originalName
+                presentationWidth
+                presentationHeight
+              }
+            }
+          }
+        }
       }
     }
   }
+}
 `;

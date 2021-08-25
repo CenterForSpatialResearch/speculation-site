@@ -1,61 +1,18 @@
 import React from "react";
-import { StaticQuery, graphql, Link } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import Img from "gatsby-image";
 import { SinglePost, Update, Freshnew, Card, CardColumns }  from "../components/style/emo-home-posts";
-import { SinglePost2, PostInfo2, PreTitle2, Subtitle2, Update2, Freshnew2, Excrept2, Card2, CardColumns2 }  from "../components/style/emo-home-posts-2";
+import { SinglePost2, PostInfo2, PreTitle2, Title2, Subtitle2, Update2, Freshnew2, Excrept2, Card2, CardColumns2 }  from "../components/style/emo-home-posts-2";
 
 let minutes = 1000 * 60;
 let hours = minutes * 60;
 let days = hours * 24;
 let months = days * 30;
 
-const Index = ({ children }) => (
-	<StaticQuery
-	query = { 
-		graphql`
-		query {
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___update], order: DESC }
-      ) {
-        edges {
-          node {
-            id
-            excerpt
-            fields {
-              slug
-            }
-            frontmatter {
-              date(formatString: "DD MMMM, YYYY")
-              update(formatString: "DD MMMM, YYYY")
-              title
-              subtitle
-              featuredImage {
-                childImageSharp {
-                  fluid(maxWidth: 500, maxHeight: 500) {
-                    base64
-                    tracedSVG
-                    aspectRatio
-                    src
-                    srcSet
-                    srcWebp
-                    srcSetWebp
-                    sizes
-                    originalImg
-                    originalName
-                    presentationWidth
-                    presentationHeight
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-		`}
-		render = { data => (
-			<Layout>
+export default ({ data }) => {
+  return (
+    <Layout>
       <CardColumns2>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <Card2 key={node.id}>
@@ -71,11 +28,8 @@ const Index = ({ children }) => (
 	              )}
                 <PostInfo2>
                   <PreTitle2>{node.frontmatter.category}</PreTitle2>
-	                
-                  <Excrept2>
-                    
-                    {node.excerpt}
-                    </Excrept2>
+	                <Subtitle2>{node.frontmatter.subtitle}</Subtitle2>
+                  <Excrept2>{node.excerpt}</Excrept2>
                 </PostInfo2>
               </SinglePost2>
             </Link>
@@ -105,9 +59,49 @@ const Index = ({ children }) => (
         ))}
       </CardColumns>
     </Layout>
-					)}
-		/>
-		);
+  );
+};
 
-export default Index;
 
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___update], order: DESC }
+    ) {
+      edges {
+        node {
+          id
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "DD MMMM, YYYY")
+            update(formatString: "DD MMMM, YYYY")
+            title
+            subtitle
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 500, maxHeight: 500) {
+                  base64
+                  tracedSVG
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                  originalImg
+                  originalName
+                  presentationWidth
+                  presentationHeight
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

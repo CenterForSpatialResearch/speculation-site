@@ -1,244 +1,104 @@
-import styled, { css } from "react-emotion";
-import { mwS } from "./breakpoints";
-import React from "react";
+import  styled , { css } from "react-emotion";
+import  { mwS } from "./breakpoints";
 
-export const Header = styled.header`
-  padding-bottom: 20px;
-  margin-bottom: 20px !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  
-  & p > strong {
-    font-weight: 100;
-  }
-  & p > a {
-    text-decoration: underline;
+export const Card = styled.div`
+    background: #fff;
+    margin-bottom: 20px;
+    transform: scale(1);
+    -o-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    opacity: 1;
+    display:flex;
+    flex-direction: column;
+  &:hover {
+    background: #e6e6e6;
+    transform: scale(0.96);
   }
 `;
 
-export const MainPost = styled.article`
-  max-width: 100%;
-  width: auto;
-  padding: 50px 20px 30px 20px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  border: 1px solid #eee;
-  background: #fff;
-  & div.content > p,
-  & div.content > ol,
-  & div.content > ul,
-  & > article,
-  & > header,
-  & > footer {
-    text-align: left;
-    margin: 0 20px;
-  }
-  & div.content > iframe {
-    margin: 30px 20px;
-  }
-  & div.content > p a iframe {
-    margin: 30px 0;
-  }
-  & div.content > span {
-    margin: 30px 0;
-  }
-  & div.content p > a {
-    text-decoration: underline;
-  }
-  & div.content > ul,
-  & div.content > ol {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 40px;
-  }
-  & div.content > img {
-    max-width: 89%;
-    float: rigth;
-  }
+export const CardColumns = styled.div`
+  -moz-column-gap: 3rem;
+  column-gap: 3rem;
+  display: list;
+  grid-template-columns: repeat(1, 1fr);
+  
+  ${mwS.small(css`
+    opacity: 1;
+  `)};
   ${mwS.medium(css`
-    max-width: 97%;
-    padding: 50px 50px 30px 50px;
-  `)}
+    grid-template-columns: repeat(2, 1fr);
+  `)};
   ${mwS.large(css`
-    max-width: 950px;
-    & div.content > img {
-      max-width: 490px;
-    }
+    grid-template-columns: repeat(2, 1fr);
+  `)};
+  ${mwS.xLarge(css`
+    grid-template-columns: repeat(3, 1fr);
   `)};
 `;
 
-export const Title = styled.h3`
-`;
-export const Subtitle = styled.h4`
-  margin-bottom: 30px;
-  font-weight: 300;
-`;
-
-export const PreTitle = styled.h5`
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  color: #777;
-  font-weight: 300;
-`;
-
-export const Tags = ({ children }) => (
-  <div
-    css={`
-      & ul > li {
-        list-style: none;
-        display: inline-block;
-        padding: 7px 10px;
-        margin-bottom: 10px;
-        margin-right: 10px;
-        border: 1px solid #ddd;
-        background: #ddd;
-        width: auto;
-      }
-    `}
-  >
-    <ul>{children}</ul>
-  </div>
-);
-
-export const Date = styled.h6`
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  color: #777;
-  font-weight: 300;
-`;
-
-export const Stats = ({ children }) => (
-  <div
-    css={`
-      margin: 30px 0;
-      padding: 30px 0;
-      overflow: hidden;
-      border-top: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
-    `}
-  >
-    {children}
-  </div>
-);
-
-export const SocialShare = ({ children }) => (
-  <ul
-    css={`
-      float: right;
-      & > li {
-        width: auto;
-        list-style: none;
-        display: inline-block;
-      }
-      & > li.social-icon {
-        color: #666666;
-        font-size: 15px;
-        display: inline-block;
-        padding: 0.5rem 0.5rem;
-      }
-    `}
-  >
-    <li>SHARE : </li>
-    {children}
-  </ul>
-);
-
-export const SocialReact = ({ children }) => (
-  <ul
-    css={`
-      float: left;
-      & > li {
-        list-style: none;
-        display: inline-block;
-        color: #666666;
-        font-size: 15px;
-        display: inline-block;
-        padding: 0.5rem 0.5rem;
-      }
-      & li.visit-counter {
-        user-select: none;
-        -o-user-select: none;
-      }
-    `}
-  >
-    {children}
-  </ul>
-);
-
-const TextInput = styled.input`
-  display: block;
-  width: 100%;
-  padding: 0.5rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.25;
-  color: #464a4c;
-  background-color: #fff;
-  background-image: none;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
-  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  &:focus {
-    color: #464a4c;
-    background-color: #fff;
-    border-color: #5cb3fd;
-    outline: none;
+export const SinglePost = styled.div`
+  & .gatsby-image-wrapper {
+    -o-transition: 0.2s all ease;
+    transition: 0.2s all ease;
   }
+  ${Card}:hover & .gatsby-image-wrapper {
+    opacity: 0.5;
+  }
+  & .gatsby-image-wrapper {
+    height: 250px;
+  }
+  ${mwS.small(css`
+    opacity: 1;
+  `)};
 `;
 
-export const Comments = ({ children }) => (
-  <div
-    css={`
-      margin: 30px 0;
-      padding: 30px;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-      border: 1px solid #ddd;
-      background: #fff;
-    `}
-  >
-    <form>
-      <div
-        className={"row"}
-        css={`
-          & > div ${TextInput} {
-            margin-bottom: 30px;
-            border-radius: 1px;
-            border: 0;
-            border-bottom: 1px solid #ddd;
-            height: 45px;
-            line-height: 45px;
-            box-shadow: none;
-            padding: 0;
-            width: 100%;
-          }
-        `}
-      >
-        <div className={"col-sm-6"}>
-          <TextInput
-            type={"text"}
-            name={"contact-form-name"}
-            placeholder={"Enter your name"}
-            required={""}
-            aria-invalid={"true"}
-            aria-required={"true"}
-          />
-        </div>
-        <div className={"col-sm-6"}>
-          <TextInput
-            type={"text"}
-            name={"contact-form-email"}
-            placeholder={"Enter your email"}
-            required={""}
-            aria-invalid={"true"}
-            aria-required={"true"}
-          />
-        </div>
-        <div className={"col-sm-12"}>
-          <textarea />
-        </div>
-        <div className={"col-sm-12"} />
-      </div>
-    </form>
-    {children}
-  </div>
-);
+export const PostImage = styled.img(props => ({
+  width: "100%"
+}));
+
+export const PostInfo = styled.div(props => ({}));
+
+export const PreTitle = styled.h6(props => ({
+  fontWeight: "500",
+  display: "block",
+  padding: "17px",
+  textTransform: "uppercase"
+}));
+
+export const Freshnew = styled.span(props => ({
+  position: "absolute",
+  zIndex: 1,
+  padding: "15px",
+  background: "#a5d6a7",
+  right: 0
+}));
+export const Update = styled.span(props => ({
+	position: "absolute",
+	zIndex: 1,
+	padding: "15px",
+	background: "#fdd835",
+	right: 0
+}));
+
+export const Title = styled.h4(props => ({
+  fontWeight: "500",
+  display: "block",
+  padding: "17px",
+	paddingBottom: 0
+}));
+
+export const Subtitle = styled.h5(props => ({
+	fontWeight: "200",
+	display: "block",
+	color: "black",
+	paddingLeft: "17px",
+	paddingBottom: "17px",
+}));
+
+export const Excrept = styled.p(props => ({
+  padding: "17px",
+  paddingTop: 0,
+  a: {
+    fontWeight: 700
+  }
+}));

@@ -1,6 +1,9 @@
 import styled, {css} from "react-emotion";
 import {mwS} from "./breakpoints";
 
+
+
+
 export const Main = styled.main`
   max-width: 1150px;
   width: 100%;
@@ -20,30 +23,12 @@ export const Main = styled.main`
   `)};
 `;
 
-export const Main2 = styled.main2`
-  max-width: 1150px;
-  width: 100%;
-  float: left;
-  padding: 30px;
-  margin-top: 130px;
-  position: relative;
-  display: block;
-  top: 0;
-
-  
-  ${mwS.medium(css`
-    margin-top: 0;
-    width: auto;
-    margin-left: 235px;
-    max-width: 75%;
-  `)};
-`;
 
 export const Aside = styled.aside`
 	width: 100%;
   position: fixed;
   display: block;
-  top: 0;
+  top: 75px;
   overflow-y: hidden;
   transition: .3s all ease;
   background: #fff;
@@ -171,5 +156,6 @@ export const SocialList = styled.span`
   
   ${mwS.medium(css`
     text-align: left;
+    opacity: 0.5;
   `)};
   `;

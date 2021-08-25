@@ -26,11 +26,9 @@ export default ({ data }) => {
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <Card key={node.id}>
             <Link to={node.fields.slug}>
-
                 <Img
                   fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
                 />
-                
             </Link>
           </Card>
         ))}
