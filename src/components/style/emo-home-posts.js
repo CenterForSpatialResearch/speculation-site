@@ -1,5 +1,6 @@
 import  styled , { css } from "react-emotion";
 import  { mwS } from "./breakpoints";
+import { useState, useEffect } from 'react';
 
 export const Card = styled.div`
     background: #fff;
@@ -10,10 +11,11 @@ export const Card = styled.div`
     opacity: 1;
     display:flex;
     flex-direction: column;
-  &:hover {
-    background: #e6e6e6;
-    transform: scale(0.96);
-  }
+    outline: solid black 2px;
+  // &:hover {
+  //   background: #e6e6e6;
+  //   transform: scale(0.9999);
+  // }
 `;
 
 export const CardColumns = styled.div`
@@ -41,9 +43,9 @@ export const SinglePost = styled.div`
     -o-transition: 0.2s all ease;
     transition: 0.2s all ease;
   }
-  ${Card}:hover & .gatsby-image-wrapper {
-    opacity: 0.5;
-  }
+  // ${Card}:hover & .gatsby-image-wrapper {
+  //   opacity: 0.5;
+  // }
   & .gatsby-image-wrapper {
     height: 250px;
   }
@@ -88,11 +90,12 @@ export const Title = styled.h4(props => ({
 }));
 
 export const Subtitle = styled.h5(props => ({
-	fontWeight: "200",
+	fontWeight: "500",
 	display: "block",
 	color: "black",
 	paddingLeft: "17px",
 	paddingBottom: "17px",
+  textTransform: "uppercase",
 }));
 
 export const Excrept = styled.p(props => ({
@@ -102,3 +105,30 @@ export const Excrept = styled.p(props => ({
     fontWeight: 700
   }
 }));
+
+
+// UNSUCCESSFUL ATTEMPT AT USING HOOKS
+
+// const {useState, useMemo } = React;
+
+// const useHover = () => {
+//   const [hovered, setHovered] = useState();
+  
+//   const eventHandlers = useMemo(() => ({
+//     onMouseOver() { setHovered(true); },
+//     onMouseOut() { setHovered(false); }
+//   }), []);
+  
+//   return [hovered, eventHandlers];
+// }
+
+// function CardStatus(props) {
+//   const [hovered,setHovered] = useHover(props.frontmatter.id);
+
+//   return(
+//     <div style={{background: '#e6e6e6',
+//     outline: "solid black 2px"}}></div>
+//   );
+
+// }
+

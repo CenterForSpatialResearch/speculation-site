@@ -2,7 +2,7 @@ import React from "react";
 import { StaticQuery, graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import Img from "gatsby-image";
-import { SinglePost, Update, Freshnew, Card, CardColumns }  from "../components/style/emo-home-posts";
+import { SinglePost, Update, Freshnew, Card, CardColumns, Subtitle }  from "../components/style/emo-home-posts";
 import { SinglePost2, PostInfo2, PreTitle2, Subtitle2, Update2, Freshnew2, Excrept2, Card2, CardColumns2 }  from "../components/style/emo-home-posts-2";
 
 let minutes = 1000 * 60;
@@ -73,7 +73,6 @@ const Index = ({ children }) => (
                   <PreTitle2>{node.frontmatter.category}</PreTitle2>
 	                <Subtitle2>{node.frontmatter.subtitle}</Subtitle2>
                   <Excrept2>
-                    
                     {node.excerpt}
                     </Excrept2>
                 </PostInfo2>

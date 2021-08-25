@@ -8,9 +8,10 @@ export const Card2 = styled.div`
     -o-transition: 0.5s all ease;
     transition: 0.5s all ease;
     opacity: 1;
-  &:hover {
-    background: #e6e6e6;
-    transform: scale(0.96);
+    outline: solid black 2px;
+  // &:hover {
+  //   background: #e6e6e6;
+  //   transform: scale(0.999);
   }
 `;
 
@@ -60,7 +61,8 @@ export const PreTitle2 = styled.h6(props => ({
   fontWeight: "500",
   display: "block",
   padding: "17px",
-  textTransform: "uppercase"
+  textTransform: "uppercase",
+  color: "#000",
 }));
 
 export const Freshnew2 = styled.span(props => ({

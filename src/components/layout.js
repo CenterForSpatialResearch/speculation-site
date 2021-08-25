@@ -66,7 +66,8 @@ const Layout = ({ children }) => (
 						</Navigator>
 					</Aside>
 					<Main>
-						<div class = "overarching-grid">{children}</div>
+						<div class = "overarching-grid">
+								{children}</div>
 						</Main>
 					</React.Fragment>
 					)}

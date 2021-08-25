@@ -277,7 +277,7 @@ body {
   margin: 0;
   font-weight: 300;
   word-wrap: break-word;
-  background: #edf3f3;
+  /* background: #edf3f3; */
   color: #000;
 }
 
@@ -338,8 +338,9 @@ p, li, input, textarea {
   line-height: 1.6;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  color: #444;
+  color: #000;
 }
+
 
 footer {
   padding: 70px 0 30px;
@@ -435,6 +436,8 @@ div.content a:hover:after {
   width: inherit;
 }
 
+
+
 .fright {
   float: right;
 }
@@ -470,4 +473,9 @@ background:black;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+}
+
+overarching-grid:hover {
+  color:#000
+
 }
