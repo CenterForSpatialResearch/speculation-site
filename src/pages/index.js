@@ -21,7 +21,7 @@ const Index = ({ children }) => (
         edges {
           node {
             id
-            excerpt
+            excerpt(pruneLength: 5000)
             fields {
               slug
             }
