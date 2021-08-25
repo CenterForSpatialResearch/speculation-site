@@ -4,7 +4,7 @@ subtitle: "From HGTV to Private Equity"
 date: "2018-11-27"
 update: "2018-11-27"
 tags: ["flip"]
-category: "Narrative"
+category: ""
 project: "https://google.com"
 demo: "https://google.com"
 featuredImage: "../../img/post/Hist_All-Flips.png"

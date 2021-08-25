@@ -1,10 +1,10 @@
 ---
-title: "Background"
+title: "Background" 
 subtitle: "Institutional Investing across geographies"
 date: "2018-11-27"
 update: "2018-11-27"
 tags: ["background"]
-category: "Narrative"
+category: ""
 project: "https://google.com"
 demo: "https://google.com"
 featuredImage: "../../img/post/inv2018.png"

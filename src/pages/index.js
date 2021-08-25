@@ -29,7 +29,7 @@ const Index = ({ children }) => (
               date(formatString: "DD MMMM, YYYY")
               update(formatString: "DD MMMM, YYYY")
               title
-              subtitle
+              category
               featuredImage {
                 childImageSharp {
                   fluid(maxWidth: 500, maxHeight: 500) {
@@ -71,7 +71,7 @@ const Index = ({ children }) => (
 	              )}
                 <PostInfo2>
                   <PreTitle2>{node.frontmatter.category}</PreTitle2>
-	                
+	                <Subtitle2>{node.frontmatter.subtitle}</Subtitle2>
                   <Excrept2>
                     
                     {node.excerpt}
