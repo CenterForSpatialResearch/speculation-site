@@ -10,12 +10,14 @@ export const Card = styled.div`
     transition: 0.5s all ease;
     opacity: 1;
     display:flex;
+  justify-content: center;
+  align-items: center;
     flex-direction: column;
     outline: solid black 2px;
-  // &:hover {
-  //   background: #e6e6e6;
-  //   transform: scale(0.9999);
-  // }
+   &:hover {
+     background: #e6e6e6;
+     transform: scale(0.9999);
+   }
 `;
 
 export const CardColumns = styled.div`

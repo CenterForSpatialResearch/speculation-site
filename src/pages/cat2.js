@@ -14,7 +14,6 @@ export default ({ data }) => {
           <Card2 key={node.id}>
             <Link to={node.fields.slug}>
                 <PostInfo2>
-                  <PreTitle2>{node.frontmatter.category}</PreTitle2>
 	                <Subtitle2>{node.frontmatter.subtitle}</Subtitle2>
                   <Excrept2>{node.excerpt}</Excrept2>
                 </PostInfo2>
@@ -27,7 +26,7 @@ export default ({ data }) => {
           <Card key={node.id}>
             <Link to={node.fields.slug}>
                 <Img
-                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                  fixed={node.frontmatter.featuredImage.childImageSharp.fixed}
                 />
             </Link>
           </Card>
@@ -40,19 +39,21 @@ export default ({ data }) => {
 export const query = graphql`
   query {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___order], order: ASC }
       filter: { frontmatter: { tags: { in: "background" } } }
     ) {
       totalCount
       edges {
         node {
           id
+          excerpt(pruneLength: 5000)
           frontmatter {
             title
             category
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 500, maxHeight: 500) {
+                fixed(width: 400) {
+                  ...GatsbyImageSharpFixed
                   base64
                   tracedSVG
                   aspectRatio
@@ -60,11 +61,7 @@ export const query = graphql`
                   srcSet
                   srcWebp
                   srcSetWebp
-                  sizes
-                  originalImg
                   originalName
-                  presentationWidth
-                  presentationHeight
                 }
               }
             }

@@ -397,6 +397,7 @@ b {
 
 img {
   max-width: 100%;
+  
 }
 
 header {
@@ -415,6 +416,7 @@ div.content a {
   display: contents;
   position: relative;
   width: max-content;
+  
 }
 
 div.content a:after {
@@ -471,8 +473,8 @@ background:black;
 
 .overarching-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 40px;
 }
 
 overarching-grid:hover {

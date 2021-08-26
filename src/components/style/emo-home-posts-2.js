@@ -9,9 +9,9 @@ export const Card2 = styled.div`
     transition: 0.5s all ease;
     opacity: 1;
     outline: solid black 2px;
-  // &:hover {
-  //   background: #e6e6e6;
-  //   transform: scale(0.999);
+   &:hover {
+     background: #e6e6e6;
+     transform: scale(0.999);
   }
 `;
 
@@ -46,6 +46,7 @@ export const SinglePost2 = styled.div`
   & .gatsby-image-wrapper {
     height: 250px;
   }
+  
   ${mwS.small(css`
     opacity: 1;
   `)};

@@ -5,12 +5,6 @@ import Img from "gatsby-image";
 import { SinglePost, Update, Freshnew, Card, CardColumns } from "../components/style/emo-post";
 import { SinglePost2, PostInfo2, PreTitle2, Subtitle2, Update2, Freshnew2, Excrept2, Card2, CardColumns2 }  from "../components/style/emo-home-posts-2";
 
-
-let minutes = 1000 * 60;
-let hours = minutes * 60;
-let days = hours * 24;
-let months = days * 30;
-
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
@@ -19,21 +13,10 @@ export default ({ data }) => {
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <Card2 key={node.id}>
             <Link to={node.fields.slug}>
-              <SinglePost2>
-	              {Math.abs(Math.round((new Date(node.frontmatter.update).getTime() - new Date().getTime()) / months)) <= 1 &&
-	               node.frontmatter.update !== node.frontmatter.date &&(
-                  <Update2>Update</Update2>
-                )}
-	              {Math.abs(Math.round((new Date(node.frontmatter.update).getTime() - new Date().getTime()) / months)) <= 1 &&
-	              node.frontmatter.update === node.frontmatter.date &&(
-		              <Freshnew2>Fresh New</Freshnew2>
-	              )}
                 <PostInfo2>
-                  <PreTitle2>{node.frontmatter.category}</PreTitle2>
 	                <Subtitle2>{node.frontmatter.subtitle}</Subtitle2>
                   <Excrept2>{node.excerpt}</Excrept2>
                 </PostInfo2>
-              </SinglePost2>
             </Link>
           </Card2>
         ))}
@@ -42,20 +25,9 @@ export default ({ data }) => {
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <Card key={node.id}>
             <Link to={node.fields.slug}>
-              <SinglePost>
-	              {Math.abs(Math.round((new Date(node.frontmatter.update).getTime() - new Date().getTime()) / months)) <= 1 &&
-	               node.frontmatter.update !== node.frontmatter.date &&(
-                  <Update>Update</Update>
-                )}
-	              {Math.abs(Math.round((new Date(node.frontmatter.update).getTime() - new Date().getTime()) / months)) <= 1 &&
-	              node.frontmatter.update === node.frontmatter.date &&(
-		              <Freshnew>Fresh New</Freshnew>
-	              )}
                 <Img
-                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                  fixed={node.frontmatter.featuredImage.childImageSharp.fixed}
                 />
-                
-              </SinglePost>
             </Link>
           </Card>
         ))}
@@ -64,44 +36,44 @@ export default ({ data }) => {
   );
 };
 
+
+
 export const query = graphql`
-query {
-  allMarkdownRemark(
-    sort: { fields: [frontmatter___update], order: DESC }
-  ) {
-    edges {
-      node {
-        id
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "DD MMMM, YYYY")
-          update(formatString: "DD MMMM, YYYY")
-          title
-          subtitle
-          featuredImage {
-            childImageSharp {
-              fluid(maxWidth: 500, maxHeight: 500) {
-                base64
-                tracedSVG
-                aspectRatio
-                src
-                srcSet
-                srcWebp
-                srcSetWebp
-                sizes
-                originalImg
-                originalName
-                presentationWidth
-                presentationHeight
+  query ($slug: String!) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___order], order: ASC }
+      filter: { fields: { slug: { eq: $slug } } }
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 5000)
+          frontmatter {
+            title
+            category
+            featuredImage {
+              childImageSharp {
+                fixed(width: 400) {
+                  ...GatsbyImageSharpFixed
+                  base64
+                  tracedSVG
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  originalName
+                }
               }
             }
           }
+          fields {
+            slug
+          }
+          excerpt(pruneLength: 5000)
         }
       }
     }
   }
-}
 `;

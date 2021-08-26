@@ -32,7 +32,8 @@ const Index = ({ children }) => (
               category
               featuredImage {
                 childImageSharp {
-                  fluid(maxWidth: 500, maxHeight: 500) {
+                  fixed(width: 400) {
+                    ...GatsbyImageSharpFixed
                     base64
                     tracedSVG
                     aspectRatio
@@ -40,11 +41,7 @@ const Index = ({ children }) => (
                     srcSet
                     srcWebp
                     srcSetWebp
-                    sizes
-                    originalImg
                     originalName
-                    presentationWidth
-                    presentationHeight
                   }
                 }
               }
@@ -70,7 +67,6 @@ const Index = ({ children }) => (
 		              <Freshnew2>Fresh New</Freshnew2>
 	              )}
                 <PostInfo2>
-                  <PreTitle2>{node.frontmatter.category}</PreTitle2>
 	                <Subtitle2>{node.frontmatter.subtitle}</Subtitle2>
                   <Excrept2>
                     {node.excerpt}
@@ -95,7 +91,7 @@ const Index = ({ children }) => (
 		              <Freshnew>Fresh New</Freshnew>
 	              )}
                 <Img
-                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                  fixed={node.frontmatter.featuredImage.childImageSharp.fixed}
                 />
                 
               </SinglePost>
