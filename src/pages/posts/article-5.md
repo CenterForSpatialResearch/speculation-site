@@ -3,6 +3,7 @@ title: "Insitutionalized Flipping"
 subtitle: "From HGTV to Private Equity"
 date: "2018-11-27"
 update: "2018-11-27"
+order: "5"
 tags: ["flip"]
 category: ""
 project: "https://google.com"

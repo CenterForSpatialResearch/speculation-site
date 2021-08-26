@@ -3,6 +3,7 @@ title: "Methods"
 subtitle: "Investigating Tax Deeds"
 date: "2018-11-27"
 update: "2018-11-27"
+order: "2"
 tags: ["background"]
 category: "Narrative"
 project: "https://google.com"

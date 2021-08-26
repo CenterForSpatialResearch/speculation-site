@@ -16,7 +16,7 @@ const Index = ({ children }) => (
 		graphql`
 		query {
       allMarkdownRemark(
-        sort: { fields: [frontmatter___update], order: DESC }
+        sort: { fields: [frontmatter___order], order: ASC }
       ) {
         edges {
           node {

@@ -3,6 +3,7 @@ title: "Frequently Flipped Properties"
 subtitle: "Visualization"
 date: "2018-11-27"
 update: "2018-11-27"
+order: "4"
 tags: ["flip"]
 category: ""
 project: "https://google.com"

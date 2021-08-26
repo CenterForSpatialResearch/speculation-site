@@ -3,6 +3,7 @@ title: "Rise of the SFR"
 subtitle: "Single Family Rental Asset class"
 date: "2018-11-27"
 update: "2018-11-27"
+order: "3"
 tags: ["sfr", "geo"]
 category: "Narrative"
 project: "https://google.com"
