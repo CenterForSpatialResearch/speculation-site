@@ -465,10 +465,11 @@ color: black;
 padding-left: 10px;
 }
 
-.marquis{
+.marquee{
   width: 100%;
 height: 25px;
 background:black;
+color: white;
 }
 
 .overarching-grid {

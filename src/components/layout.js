@@ -10,6 +10,7 @@ import React from "react";
 import { StaticQuery, Link, graphql } from "gatsby";
 import { Main, Main2, Aside, Logo, Navigator, LinksList, SocialList } from "./style/emo-layout.js";
 import { Helmet } from "react-helmet"
+import Marquee from "react-fast-marquee";
 
 
 
@@ -31,7 +32,7 @@ const Layout = ({ children }) => (
 		render = { data => (
 			<React.Fragment>
 			<div class = "banner"> <h3>{data.site.siteMetadata.title}</h3> </div>
-			<div class = "marquis"></div>
+			<Marquee gradient = {false} speed = {30} pauseOnHover = {true} ><div class = "marquee"> <h4> INVESTIGATING THE METHODS AND GEOGRAPHIES CONTEMPORARY REAL ESTATE SPECULATION. FROM THE CENTER FOR SPATIAL RESEARCH AT THE COLUMBIA GSAPP.  </h4></div></Marquee>
 			<Helmet
 			
 			meta = {[
