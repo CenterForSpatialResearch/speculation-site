@@ -57,7 +57,7 @@ const Layout = ({ children }) => (
 								<LinksList>
 									<li><Link to={`/`} activeClassName="active">All</Link></li>
 									<li><Link to={`/cat2/`} activeClassName="active">Background</Link></li>
-									<li><Link to={`/cat3/`} activeClassName="active">Rise of the SFR</Link></li>
+									<li><Link to={`/cat3/`} activeClassName="active">Growing Investors</Link></li>
 									<li><Link to={`/cat4/`} activeClassName="active">Institutionalized Flipping</Link></li>
 									<li><Link to={`/cat5/`} activeClassName="active">Diverging Geographies</Link></li>
 									
