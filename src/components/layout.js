@@ -57,11 +57,14 @@ const Layout = ({ children }) => (
 							<nav>
 								<LinksList>
 									<li><Link to={`/`} activeClassName="active">All</Link></li>
-									<li><Link to={`/cat2/`} activeClassName="active">Background</Link></li>
-									<li><Link to={`/cat3/`} activeClassName="active">Growing Investors</Link></li>
-									<li><Link to={`/cat4/`} activeClassName="active">Institutionalized Flipping</Link></li>
-									<li><Link to={`/cat5/`} activeClassName="active">Diverging Geographies</Link></li>
-									
+									<li><Link to={`/tag-background/`} activeClassName="active">Background</Link></li>
+									<li><Link to={`/tag-growing-investors/`} activeClassName="active">Growing Investors</Link></li>
+									<li><Link to={`/tag-inst-flipping/`} activeClassName="active">Institutionalized Flipping</Link></li>
+									<li><Link to={`/tag-div-geographies/`} activeClassName="active">Diverging Geographies</Link></li>
+									<li>Sites:</li>
+									<li><Link to={`/tag-site-philly/`} activeClassName="active">Philadelphia</Link></li>
+									<li><Link to={`/tag-site-buffalo/`} activeClassName="active">Buffalo</Link></li>
+									<li><Link to={`/tag-site-newark/`} activeClassName="active">Newark</Link></li>
 								</LinksList>
 							</nav>
 						</Navigator>

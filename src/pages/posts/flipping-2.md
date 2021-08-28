@@ -11,4 +11,6 @@ demo: ""
 featuredImage: "../../img/post/philadelphia/evolution-of-flips/Flips_SampleDeeds.png"
 ---
 
-Housing flips, the strategic purchase and sale of a property for an appreciated value, are defined in our study as real estate transfers occurring less than 1.5 years after the purchase of the property. In total the effects of converting a cheap housing stock to a profitable one contributes to a growing reality of home ownership being financially untenable for a large number of people. The trend toward investor flipping moves the real estate profits from smaller local investors to larger external investors.
+Here is a sample set of deeds where we go from the original transaction data from 2000 - 2020, calculate the difference in days between each transaction, and then filter for our criteria.
+
+1000 S Colorado Street has been flipped two times over the past twenty years, this may seem more than average considering how home ownership is thought of as a long-term activity, but there are properties with far more activity in them.
