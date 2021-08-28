@@ -95,7 +95,7 @@ export const LinksList = styled.ul`
   }
 
   li a {
-    color: #000;
+
     padding: 0 7px;
     display: block;
     position: relative;
@@ -105,6 +105,7 @@ export const LinksList = styled.ul`
   }
 
   li a:after {
+    color: white;
     content: "";
     position: absolute;
     bottom: 0;
@@ -119,6 +120,7 @@ export const LinksList = styled.ul`
   li:hover a:after, li a.active:after {
     width: 100%;
     border: 1px solid #f7f7f7;
+    
   }
 
   ${mwS.medium(css`
