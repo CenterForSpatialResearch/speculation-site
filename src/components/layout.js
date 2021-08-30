@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
 		render = { data => (
 			<React.Fragment>
 			<div class = "banner"> <h3>{data.site.siteMetadata.title}</h3> </div>
-			<Marquee gradient = {false} speed = {30} pauseOnHover = {true} ><div class = "marquee"> <h4> INVESTIGATING THE METHODS AND GEOGRAPHIES CONTEMPORARY REAL ESTATE SPECULATION. FROM THE CENTER FOR SPATIAL RESEARCH AT THE COLUMBIA GSAPP.  </h4></div></Marquee>
+			<Marquee gradient = {false} speed = {30} pauseOnHover = {true} ><div class = "marquee"> <h4> INVESTIGATING THE METHODS AND GEOGRAPHIES CONTEMPORARY REAL ESTATE SPECULATION  </h4></div></Marquee>
 			<Helmet
 			
 			meta = {[
