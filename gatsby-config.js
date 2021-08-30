@@ -4,8 +4,8 @@ module.exports = {
     subtitle: `Center for Spatial Research`,
     description: ``,
     keywords: `mapping, CSR, Columbia, GSAPP, research`,
-    siteUrl: `https://darebrawley.github.io/speculation-site/`,
-    pathPrefix: '/speculation-site'
+    siteUrl: `tracingspeculation.org`,
+    pathPrefix: ''
   },
   plugins: [
     `gatsby-plugin-jss`,
